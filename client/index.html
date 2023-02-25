@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Team Couch</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+      <h1>{{ title }}</h1>
+      <div v-show="isShown" class="product-image">
+        <img v-bind:src="image">
+      </div>
+      <p>Available teams:</p>
+      <ul>
+        <li v-for="team in teams">{{ team }}</li>
+      </ul>
+        
+        <div class="cart">
+          <p>Cart({{ cart.length }})</p>
+        </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+
+    <!-- Mount App -->
+    <script>
+      app.mount('#app')
+    </script>
+  </body>
+</html>
