@@ -3,10 +3,26 @@ const app = Vue.createApp({
       return {
         title: 'Team Couch',
         image: './assets/images/sofa.webp',
-        isShown: true,
-        teams: ['Java 1', 'Java 2', 'Java 3', 'QA', 'Consultants', '.NET', 'Misc 1', 'Misc 2', 'Misc 3'],
-        premium: true,
-        cart: []
+        isShown: false,
+        teams: [
+          { id: 1, name: 'Java', color: 'yellow'},
+          { id: 1, name: 'QA', color: 'purple'},
+          { id: 1, name: 'Consultants', color: 'green'},
+          { id: 1, name: '.NET', color: 'blue'},
+        ],         
+        leads: [
+          { id: 1, name: 'Duje'},
+          { id: 2, name: 'Mislav'},
+          { id: 3, name: 'Mario'},
+          { id: 4, name: 'Josipa'}
+        ],
+        cart: 0,
+        inStock: false
+      }
+    },
+    methods: {
+      addToCart() {
+        this.cart += 1
       }
     }
   })
