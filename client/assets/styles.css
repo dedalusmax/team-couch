@@ -1,6 +1,7 @@
 body {
     background-color: #f2f2f2;
     margin: 0px;
+    padding: 0px;
     font-family: tahoma;
     color: #282828;
   }
@@ -32,14 +33,17 @@ body {
     box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
   }
   
-  .color-circle {
-    width: 50px;
-    height: 50px;
-    margin-top: 8px;
-    border: 2px solid #d8d8d8;
-    border-radius: 50%;
+  .team-box {
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid gray;
+    border-radius: 10%;
+    display: inline-flex;
+    flex-grow: 1;
+    flex-flow: column;
+    text-align: center;
   }
-  
   
   .disabledButton {
     background-color: #d8d8d8;
@@ -47,13 +51,20 @@ body {
   }
   
   h1 {
-    font-size: 50px;
+    font-size: xx-large;
+    margin: 10px;
   }
   
-  h3 {
-    font-size: 25px;
+  h2 {
+    font-size: x-large;
+    margin: 10px;
   }
-  
+
+  p {
+    font-size: medium;
+    margin: 10px;
+  }
+
   img {
     border: 2px solid #d8d8d8;
     width: 70%;
@@ -87,11 +98,7 @@ body {
     -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.57);
   }
-  
-  p {
-    font-size: 22px;
-  }
-  
+
   .product-display {
     display: flex;
     flex-direction: column;

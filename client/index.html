@@ -14,19 +14,25 @@
   <div id="app">
     <div class="nav-bar"></div>
     <h1>{{ title }}</h1>
-      <div v-show="isShown" class="product-image">
-        <img v-bind:src="image">
-      </div>
-      <p>Teams:</p>
-      <div v-for="team in teams" :key="team.id" class="color-circle" :style="{ backgroundColor: team.color }">{{ team.name }}</div>
-      <p>Available team leads:</p>
-      <ul>
-        <li v-for="lead in leads">{{ lead.name }}</li>
-      </ul>
+    <div v-show="showImage" class="product-image">
+      <img v-bind:src="image">
+    </div>
+    <p v-if="hasCapacity">Free to add</p>
+    <p v-else>No room</p>
+    <h2>Teams:</h2>
+    <div v-for="(team, index) in teams" :key="team.id" @mouseover="showProject(index)" class="team-box"
+      :style="{ backgroundColor: team.color }">
+      {{ team.name }}
+    </div>
+    <h2>Available team leads:</h2>
+    <ul>
+      <li v-for="lead in leads">{{ lead.name }}</li>
+    </ul>
     <div class="cart">
       <p>Project({{ project }})</p>
     </div>
-    <button class="button" :class="{ disabledButton: !inStock }" v-on:click="addToProject" :disabled="!inStock">Add to project</button>
+    <button class="button" :class="{ disabledButton: !hasCapacity }" v-on:click="addToProject"
+      :disabled="!hasCapacity">Add to project</button>
   </div>
 
   <!-- Import App -->
