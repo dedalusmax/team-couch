@@ -1,9 +1,8 @@
 const app = Vue.createApp({
     data() {
       return {
-        title: 'Team Couch',
         image: './assets/images/sofa.webp',
-        isShown: false,
+        isShown: true,
         teams: [
           { id: 1, name: 'Java', color: 'yellow'},
           { id: 1, name: 'QA', color: 'purple'},
@@ -16,13 +15,18 @@ const app = Vue.createApp({
           { id: 3, name: 'Mario'},
           { id: 4, name: 'Josipa'}
         ],
-        cart: 0,
-        inStock: false
+        project: 0,
+        inStock: true
       }
     },
     methods: {
-      addToCart() {
-        this.cart += 1
+      addToProject() {
+        this.project += 1
+      }
+    },
+    computed: {
+      title() {
+        return 'Team Couch (' + this.project + ')'
       }
     }
   })

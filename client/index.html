@@ -24,9 +24,9 @@
         <li v-for="lead in leads">{{ lead.name }}</li>
       </ul>
     <div class="cart">
-      <p>Cart({{ cart }})</p>
+      <p>Project({{ project }})</p>
     </div>
-    <button class="button" :class="{ disabledButton: !inStock }" v-on:click="addToCart" :disabled="!inStock">Add to cart</button>
+    <button class="button" :class="{ disabledButton: !inStock }" v-on:click="addToProject" :disabled="!inStock">Add to project</button>
   </div>
 
   <!-- Import App -->
